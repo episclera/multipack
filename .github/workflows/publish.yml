@@ -22,7 +22,7 @@ jobs:
       - name: npm install, ci:publish
         run: |
           npm install
-          npm run ci:publish:packages --yes
+          npm run ci:publish:packages
         env:
           CI: true
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

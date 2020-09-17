@@ -38,7 +38,7 @@
     "watch:packages": "lerna run watch",
     "link:packages": "lerna bootstrap",
     "publish:packages": "npm run link:packages && npm run build:changed:packages && lerna publish --message=\"chore: publish changed packages\"",
-    "ci:publish:packages": "npm run link:packages && npm run build:packages && lerna publish --message=\"chore: publish changed packages\" --yes",
+    "ci:publish:packages": "npm run link:packages && npm run build:packages && lerna publish --message=\"chore: publish changed packages\" --canary",
     "test:packages": "jest --coverage",
     "watch:test:packages": "jest --watch",
     "lint:packages": "eslint ./packages --ext .ts,.tsx --max-warnings=0",
