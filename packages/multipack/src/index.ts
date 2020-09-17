@@ -4,9 +4,10 @@ import { Counter, useCounter } from '@episclera/multipack-with-react'
 import { Multipack } from '../types'
 
 const multipack: Multipack = {
-  toNumber,
   useCounter,
   Counter,
+  // utils
+  toNumber,
 }
 
 export { toNumber, useCounter, Counter }
