@@ -44,7 +44,7 @@
     "@episclera/webpack-config": "1.0.2",
     "cross-env": "7.0.2",
     "rimraf": "3.0.2",
-    "typescript": "4.0.2",
+    "typescript": "4.0.3",
     "webpack": "4.44.1",
     "webpack-cli": "3.3.12"
   },
