@@ -34,7 +34,6 @@ jobs:
         run: |
           cd ./docs
           npm install
-          npm run build
           npm run ci:deploy
         env:
           GIT_USER: gherciu
