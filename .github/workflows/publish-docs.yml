@@ -42,3 +42,5 @@ jobs:
           npm run ci:deploy
         env:
           CI: true
+          USE_SSH: true
+          GIT_USER: git
