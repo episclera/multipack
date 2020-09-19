@@ -23,6 +23,7 @@ jobs:
         run: |
           git config --global user.email "episclera@episclera.com"
           git config --global user.name "Episclera"
+          echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
           npm install
           npm run ci:publish:packages
         env:
