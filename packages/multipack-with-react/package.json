@@ -45,7 +45,7 @@
     "@testing-library/jest-dom": "5.11.4",
     "@testing-library/react": "11.0.4",
     "@testing-library/react-hooks": "3.4.2",
-    "@types/react": "16.9.50",
+    "@types/react": "16.9.52",
     "cross-env": "7.0.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
