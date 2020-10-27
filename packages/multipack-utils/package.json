@@ -40,7 +40,7 @@
     "postinstall": "opencollective-postinstall || exit 0"
   },
   "devDependencies": {
-    "@episclera/toolkit-utils": "1.0.14",
+    "@episclera/toolkit-utils": "1.0.15",
     "@episclera/webpack-config": "1.0.4",
     "cross-env": "7.0.2",
     "rimraf": "3.0.2",

@@ -40,7 +40,7 @@
     "postinstall": "opencollective-postinstall || exit 0"
   },
   "devDependencies": {
-    "@episclera/toolkit-utils": "1.0.14",
+    "@episclera/toolkit-utils": "1.0.15",
     "@episclera/webpack-config": "1.0.4",
     "@testing-library/react": "11.1.0",
     "@testing-library/react-hooks": "3.4.2",
