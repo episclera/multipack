@@ -44,7 +44,7 @@
     "@episclera/webpack-config": "1.0.5",
     "@testing-library/react": "11.1.0",
     "@testing-library/react-hooks": "3.4.2",
-    "@types/react": "16.9.53",
+    "@types/react": "16.9.54",
     "cross-env": "7.0.2",
     "react": "17.0.1",
     "react-dom": "17.0.1",
