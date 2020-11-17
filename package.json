@@ -34,11 +34,10 @@
   },
   "scripts": {
     "build:packages": "lerna run build",
-    "build:changed:packages": "lerna run build --since",
     "watch:packages": "lerna run watch",
     "link:packages": "lerna bootstrap",
-    "publish:packages": "npm run link:packages && npm run build:changed:packages && lerna publish --message=\"chore: publish changed packages\"",
-    "ci:publish:packages": "npm run link:packages && npm run build:packages && yes | lerna publish --message=\"chore: publish changed packages\"",
+    "pre:publish:packages": "lerna version --message=\"chore: publish changed packages\"",
+    "publish:packages": "lerna publish from-package",
     "test:packages": "jest --coverage",
     "watch:test:packages": "jest --watch",
     "lint:packages": "eslint ./packages --ext .ts,.tsx --max-warnings=0",

@@ -16,12 +16,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install, build, and test
+      - name: Setup environment
         run: |
           npm install
           npm run link:packages
           npm run build:packages
+      - name: Lint and Test
+        run: |
           npm run lint:packages
           npm run test:packages
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

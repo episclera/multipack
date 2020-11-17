@@ -19,15 +19,25 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Setup publish-environment
+      - name: Setup environment
         run: |
           git config --global user.email "actions@gihub.com"
           git config --global user.name "gh-actions"
+          npm install
+          npm run link:packages
+          npm run build:packages
+      - name: Pre-Publish packages
+        run: |
+          yes | npm run pre:publish:packages
+      - name: Publish to NPM
+        run: |
           echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
+          yes | npm run publish:packages
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: Publish packages
+      - name: Publish to GitHub Packages
         run: |
-          npm install
-          npm run ci:publish:packages
-
+          echo //npm.pkg.github.com/:_authToken=${GITHUB_TOKEN} > .npmrc
+          yes | npm run publish:packages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

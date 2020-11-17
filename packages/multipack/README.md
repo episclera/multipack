@@ -46,7 +46,9 @@ This will run the build script and then publish your packages. It is currently s
 
 `npm run watch:packages` - start `webpack` in watch mode to rebuild packages on each change
 
-`npm run publish:packages` - publish all packages in package registry (npm, yarn ...)
+`npm run pre:publish:packages` - Bump version of packages changed since the last release
+
+`npm run publish:packages` - publish packages where the latest version is not present in the registry
 
 `npm run link:packages` - will installing all packages dependencies and linking any cross-dependencies in each package
 
