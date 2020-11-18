@@ -39,4 +39,5 @@ jobs:
         run: |
           echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" > .npmrc
           echo '@episclera:registry=https://npm.pkg.github.com' >> .npmrc
+          npm login --registry=https://npm.pkg.github.com --scope=@episclera
           yes | npm run publish:packages
