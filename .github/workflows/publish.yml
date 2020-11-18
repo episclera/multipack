@@ -37,5 +37,6 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Publish to GitHub Packages
         run: |
-          echo //npm.pkg.github.com/:_authToken=${GITHUB_TOKEN} > .npmrc
+          echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" > .npmrc
+          echo '@episclera:registry=https://npm.pkg.github.com' >> .npmrc
           yes | npm run publish:packages
