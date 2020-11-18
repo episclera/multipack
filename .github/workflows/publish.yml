@@ -28,9 +28,9 @@ jobs:
           npm install
           npm run link:packages
           npm run build:packages
-      - name: Pre-Publish packages
+      - name: Bump package versions and Create release tags
         run: |
-          yes | npm run pre:publish:packages
+          yes | npm run version:packages
       - name: Prepare .npmrc file to publish packages to NPM registry
         uses: actions/setup-node@v1
         with:

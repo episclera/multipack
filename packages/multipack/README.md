@@ -34,19 +34,13 @@
 
 Running `npm run link:packages` will installing all packages dependencies and linking any cross-dependencies. This command is crucial, as it allows you to use your package names in `require()` as if the packages were already existing and available in your `node_modules` folder.
 
-## Publishing
-
-To build and publish your packages you just need to run: `npm run publish:packages`
-
-This will run the build script and then publish your packages. It is currently set to publish each package individually so that their versions are independent.
-
 ## CLI Commands
 
 `npm run build:packages` - build all packages with `webpack` in `production` mode
 
 `npm run watch:packages` - start `webpack` in watch mode to rebuild packages on each change
 
-`npm run pre:publish:packages` - Bump version of packages changed since the last release
+`npm run version:packages` - Bump package versions and Create release tags
 
 `npm run publish:packages:npm` - publish packages where the latest version is not present in the `NPM` registry
 

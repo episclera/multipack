@@ -36,7 +36,7 @@
     "build:packages": "lerna run build",
     "watch:packages": "lerna run watch",
     "link:packages": "lerna bootstrap",
-    "pre:publish:packages": "lerna version --yes --message=\"chore: publish changed packages\"",
+    "version:packages": "lerna version --yes --message=\"chore: publish changed packages\"",
     "publish:packages:npm": "lerna publish from-package --yes --registry=https://registry.npmjs.org",
     "publish:packages:github": "lerna publish from-package --yes --registry=https://npm.pkg.github.com",
     "test:packages": "jest --coverage",
