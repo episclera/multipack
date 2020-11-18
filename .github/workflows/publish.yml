@@ -38,4 +38,5 @@ jobs:
       - name: Publish to GitHub Packages
         run: |
           echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" > .npmrc
+          npm login --registry=https://npm.pkg.github.com --scope=@episclera
           yes | npm run publish:packages:gh
