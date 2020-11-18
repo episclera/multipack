@@ -39,5 +39,3 @@ jobs:
         run: |
           echo //npm.pkg.github.com/:_authToken=${GITHUB_TOKEN} > .npmrc
           npm run publish:packages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
