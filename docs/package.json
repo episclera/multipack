@@ -38,6 +38,6 @@
     ]
   },
   "devDependencies": {
-    "cross-env": "7.0.2"
+    "cross-env": "7.0.3"
   }
 }
