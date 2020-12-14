@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@episclera/toolkit-utils": "1.0.23",
-    "@episclera/webpack-config": "1.0.12",
+    "@episclera/webpack-config": "1.0.13",
     "@testing-library/react": "11.2.2",
     "@testing-library/react-hooks": "3.7.0",
     "@types/react": "17.0.0",
