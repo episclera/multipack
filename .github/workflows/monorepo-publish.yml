@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
       - name: Setup git user
@@ -31,7 +31,7 @@ jobs:
         run: |
           yes | npm run version:packages
       - name: Prepare .npmrc file to publish packages to NPM registry
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           registry-url: 'https://registry.npmjs.org'
       - name: Publish to NPM
@@ -40,7 +40,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Prepare .npmrc file to publish packages to GitHub registry
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@episclera'
