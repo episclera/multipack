@@ -40,6 +40,10 @@ Running `npm run link:packages` will installing all packages dependencies and li
 
 `npm run watch:packages` - start `webpack` in watch mode to rebuild packages on each change
 
+`npm run start:packages` - start (aplications,apis) packages
+
+`npm run serve:packages` - build and serve (aplications,apis) packages
+
 `npm run version:packages` - Bump package versions and Create release tags
 
 `npm run publish:packages:npm` - publish packages where the latest version is not present in the `NPM` registry
@@ -51,10 +55,6 @@ Running `npm run link:packages` will installing all packages dependencies and li
 `npm run test:packages` - run `jest` tests in each package and colect coverage from all packages
 
 `npm run watch:test:packages` - run and watch all tests for changes
-
-`npm run start:test:packages` - start (aplications,apis) packages
-
-`npm run serve:test:packages` - build and serve (aplications,apis) packages
 
 `npm run lint:packages` - lint all packages
 
