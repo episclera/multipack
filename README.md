@@ -52,6 +52,10 @@ Running `npm run link:packages` will installing all packages dependencies and li
 
 `npm run watch:test:packages` - run and watch all tests for changes
 
+`npm run start:test:packages` - start (aplications,apis) packages
+
+`npm run serve:test:packages` - build and serve (aplications,apis) packages
+
 `npm run lint:packages` - lint all packages
 
 `npm run lint:packages:styles` - lint all packages styles

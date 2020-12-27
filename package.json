@@ -33,6 +33,8 @@
     "publish:packages:github": "lerna publish from-package --yes --registry=https://npm.pkg.github.com",
     "test:packages": "jest --coverage",
     "watch:test:packages": "jest --watch",
+    "start:packages": "lerna run start --stream --parallel",
+    "serve:packages": "lerna run serve --stream --parallel",
     "lint:packages": "eslint ./packages --ext .ts,.tsx --max-warnings=0",
     "fix:packages": "eslint ./packages --ext .ts,.tsx --fix --max-warnings=0",
     "lint:packages:styles": "stylelint \"./packages/**/*.less\" --syntax=less",
