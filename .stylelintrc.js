@@ -1,3 +1,3 @@
-const { stylelintConfig } = require('@episclera/toolkit')
+const { stylelintConfig } = require('@episclera/configkit')
 
 module.exports = stylelintConfig

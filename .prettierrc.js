@@ -1,3 +1,3 @@
-const { prettierConfig } = require('@episclera/toolkit')
+const { prettierConfig } = require('@episclera/configkit')
 
 module.exports = prettierConfig

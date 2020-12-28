@@ -2,6 +2,6 @@ const {
   commonJestConfig,
   monorepoJestConfig,
   mergeConfigs,
-} = require('@episclera/toolkit')
+} = require('@episclera/configkit')
 
 module.exports = mergeConfigs(commonJestConfig, monorepoJestConfig)

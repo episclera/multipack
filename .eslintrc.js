@@ -3,6 +3,6 @@ const {
   commonEslintConfig,
   monorepoEslintConfig,
   mergeConfigs,
-} = require('@episclera/toolkit')
+} = require('@episclera/configkit')
 
 module.exports = mergeConfigs(commonEslintConfig, monorepoEslintConfig)

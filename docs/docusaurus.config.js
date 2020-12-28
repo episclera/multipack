@@ -71,7 +71,8 @@ module.exports = {
       logo: {
         href: pkg.author.url,
         alt: `${pkg.author.name} Open Source Logo`,
-        src: 'img/organisation-logo.png',
+        src:
+          'https://raw.githubusercontent.com/episclera/.github/master/outlined-logo.png',
       },
       copyright: `Copyright © ${new Date().getFullYear()}. ${pkg.author.name}`,
     },

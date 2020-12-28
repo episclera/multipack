@@ -8,6 +8,10 @@ sidebar_label: CLI Commands
 
 `npm run watch:packages` - start `webpack` in watch mode to rebuild packages on each change
 
+`npm run start:packages` - start (aplications,apis) packages
+
+`npm run serve:packages` - build and serve (aplications,apis) packages
+
 `npm run version:packages` - Bump package versions and Create release tags
 
 `npm run publish:packages:npm` - publish packages where the latest version is not present in the `NPM` registry
@@ -21,6 +25,8 @@ sidebar_label: CLI Commands
 `npm run watch:test:packages` - run and watch all tests for changes
 
 `npm run lint:packages` - lint all packages
+
+`npm run lint:packages:styles` - lint all packages styles
 
 `npm run fix:packages` - lint and fix all packages
 
