@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies, no-use-before-define */
 import React from 'react'
 import { fireEvent, render } from '@testing-library/react'
 import useCounter from '../useCounter'

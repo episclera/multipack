@@ -1,8 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-const {
-  commonEslintConfig,
-  monorepoEslintConfig,
-  mergeConfigs,
-} = require('@episclera/configkit')
+const { eslintConfig } = require('@episclera/configkit')
 
-module.exports = mergeConfigs(commonEslintConfig, monorepoEslintConfig)
+module.exports = eslintConfig
