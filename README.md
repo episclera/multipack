@@ -40,9 +40,9 @@ Running `npm run link:packages` will installing all packages dependencies and li
 
 `npm run watch:packages` - start `webpack` in watch mode to rebuild packages on each change
 
-`npm run start:packages` - start (aplications,apis) packages
+`npm run watch:packages` - start in watch mode (aplications,apis docs) packages
 
-`npm run serve:packages` - build and serve (aplications,apis) packages
+`npm run start:packages` - build and serve (aplications,apis) packages
 
 `npm run version:packages` - Bump package versions and Create release tags
 
@@ -62,7 +62,7 @@ Running `npm run link:packages` will installing all packages dependencies and li
 
 `npm run fix:packages` - lint and fix all packages
 
-`npm run start:docs` - start a [Docusaurus](https://docusaurus.io/) server that serve files from `/docs` folder predestinated for docs.
+`npm run watch:docs` - start a [Docusaurus](https://docusaurus.io/) server that serve files from `/docs` folder predestinated for docs.
 
 `npm run publish:docs` - publish generated docs with [Docusaurus](https://docusaurus.io/) to `Github Pages`
 
