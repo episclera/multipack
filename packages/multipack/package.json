@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@episclera/configkit-utils": "1.0.44",
-    "@episclera/webpack-config": "1.0.13",
+    "@episclera/webpack-config": "1.0.34",
     "@types/react": "17.0.0",
     "cross-env": "7.0.3",
     "react": "17.0.1",
