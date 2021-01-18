@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@docusaurus/core": "2.0.0-alpha.f48d435ce",
-    "@episclera/docusaurus-config": "1.0.13",
+    "@episclera/docusaurus-config": "1.0.17",
     "@episclera/uikit": "1.0.24",
     "react": "17.0.1",
     "react-dom": "17.0.1"
