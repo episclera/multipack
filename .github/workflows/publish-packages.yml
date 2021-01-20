@@ -24,7 +24,7 @@ jobs:
           git config --global user.name "gh-actions"
       - name: Install dependencies and build packages
         run: |
-          npm install
+          npm ci
           npm run link:packages
           npm run build:packages
       - name: Bump package versions and Create release tags
@@ -36,7 +36,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - name: Publish to NPM
         run: |
-          yes | npm run publish:packages:npm
+          yes | npm run publish:packages
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Prepare .npmrc file to publish packages to GitHub registry
@@ -46,6 +46,6 @@ jobs:
           scope: '@episclera'
       - name: Publish to GitHub
         run: |
-          yes | npm run publish:packages:github
+          yes | npm run publish:packages
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
