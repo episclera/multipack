@@ -19,7 +19,7 @@
     "publish": "echo \"Please type your username for a GitHub account that has commit access to this repo.\" && read -p 'GIT_USERNAME: ' GIT_USER && cross-env GIT_USER=$GIT_USER docusaurus deploy"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-alpha.f48d435ce",
+    "@docusaurus/core": "2.0.0-alpha.fd17476c3",
     "@episclera/docusaurus-config": "1.1.2",
     "@episclera/uikit": "1.1.2",
     "react": "17.0.1",
@@ -38,7 +38,7 @@
     ]
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.0.0-alpha.f48d435ce",
+    "@docusaurus/module-type-aliases": "2.0.0-alpha.fd17476c3",
     "@tsconfig/docusaurus": "1.0.2",
     "@types/react": "17.0.0",
     "@types/react-helmet": "6.1.0",
