@@ -42,7 +42,7 @@
   "devDependencies": {
     "@episclera/configkit-utils": "1.1.2",
     "@episclera/webpack-config": "1.1.2",
-    "@testing-library/react": "11.2.4",
+    "@testing-library/react": "11.2.5",
     "@testing-library/react-hooks": "5.0.3",
     "@types/react": "17.0.0",
     "cross-env": "7.0.3",
