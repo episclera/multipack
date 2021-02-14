@@ -55,7 +55,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "11.0.0",
-    "@episclera/configkit": "1.1.37",
+    "@episclera/configkit": "1.2.3",
     "@types/jest": "26.0.20",
     "eslint": "7.19.0",
     "husky": "4.3.8",
