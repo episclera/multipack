@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@episclera/configkit-utils": "1.2.1",
-    "@episclera/webpack-config": "1.2.0",
+    "@episclera/webpack-config": "1.2.1",
     "cross-env": "7.0.3",
     "rimraf": "3.0.2",
     "webpack": "5.34.0",
