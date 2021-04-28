@@ -1,3 +1,3 @@
-const { commitlintConfig } = require('@episclera/configkit')
+const { commitlintConfig } = require('@episclera/multipack')
 
 module.exports = commitlintConfig

@@ -1,3 +1,3 @@
-const { eslintConfig } = require('@episclera/configkit')
+const { eslintConfig } = require('@episclera/multipack')
 
 module.exports = eslintConfig
