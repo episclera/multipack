@@ -52,7 +52,7 @@
     "opencollective-postinstall": "2.0.3",
     "stylelint": "13.13.0",
     "stylelint-config-prettier": "8.0.2",
-    "stylelint-config-recommended": "3.0.0",
+    "stylelint-config-recommended": "5.0.0",
     "stylelint-prettier": "1.2.0"
   },
   "gitHead": "8635a43c9abe3ab19ed07077384ebf40fbd7717c"
