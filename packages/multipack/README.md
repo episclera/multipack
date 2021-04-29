@@ -42,7 +42,7 @@ Install: `npm i -g @episclera/multipack`
 
 ```sh
 ? What to create in the workspace (Use arrow keys)
-❯  module           [UMD module package]
+❯  module           [UMD package]
    cli              [CLI package]
    react            [React package]
    web              [Next.js app]
