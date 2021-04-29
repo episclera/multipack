@@ -8,20 +8,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x]
-
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
       - name: Setup git user
         run: |
-          git config --global user.email "actions@gihub.com"
-          git config --global user.name "gh-actions"
+          git config --global user.email "noreply@github.com"
+          git config --global user.name "Github"
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
       - name: Install dependencies and build packages
         run: |
           npm ci
