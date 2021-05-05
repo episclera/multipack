@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "opencollective-postinstall": "2.0.3",
-    "postcss": "8.2.13"
+    "postcss": "8.2.14"
   },
   "gitHead": "8635a43c9abe3ab19ed07077384ebf40fbd7717c"
 }
