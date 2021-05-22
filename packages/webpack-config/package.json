@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "opencollective-postinstall": "2.0.3",
-    "ts-loader": "9.2.1",
+    "ts-loader": "9.2.2",
     "typescript": "4.2.4"
   },
   "gitHead": "8635a43c9abe3ab19ed07077384ebf40fbd7717c"
