@@ -47,6 +47,7 @@
   },
   "dependencies": {
     "@episclera/babel-config": "^1.9.0",
+    "@episclera/codegen-config": "^1.0.0",
     "@episclera/commitlint-config": "^1.9.0",
     "@episclera/eslint-config": "^1.9.0",
     "@episclera/jest-config": "^1.9.0",

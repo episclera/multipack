@@ -11,6 +11,7 @@ import { TailwindConfig } from '@episclera/tailwind-config'
 import { NextConfig } from '@episclera/next-config'
 import { NextI18NextConfig } from '@episclera/next-i18next-config'
 import { LintStagedConfig } from '@episclera/lint-staged-config'
+import { CodeGenConfig } from '@episclera/codegen-config'
 
 export interface Multipack {
   // prettier
@@ -38,6 +39,8 @@ export interface Multipack {
   nextI18NextConfig: NextI18NextConfig
   // lint-staged
   lintStagedConfig: LintStagedConfig
+  // codegen
+  codeGenConfig: CodeGenConfig
   // utils
   mergeConfigs: TMergeConfigs
 }
@@ -68,6 +71,8 @@ export const nextConfig: NextConfig
 export const nextI18NextConfig: NextI18NextConfig
 // lint-staged
 export const lintStagedConfig: LintStagedConfig
+// codegen
+export const codeGenConfig: CodeGenConfig
 // utils
 export const mergeConfigs: TMergeConfigs
 
