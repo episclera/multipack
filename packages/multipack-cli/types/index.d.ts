@@ -1,6 +1,7 @@
 import { CommanderError, OutputConfiguration } from 'commander'
 import Enquirer from 'enquirer'
 import ora from 'ora'
+import { ReplaceInFileConfig } from 'replace-in-file'
 
 // commands
 export type TCreateCommand = (
@@ -82,10 +83,6 @@ export interface GeneratorMoveAction extends GeneratorActionBase {
   type: 'move'
 }
 
-export interface GeneratorTransformTemplateAction extends GeneratorActionBase {
-  type: 'transformTemplate'
-}
-
 export interface GeneratorRenameAction extends GeneratorActionBase {
   type: 'rename'
 }
@@ -95,14 +92,12 @@ export interface GeneratorRemoveAction {
   files: string[]
 }
 
-export interface GeneratorModifyAction {
+export interface GeneratorModifyAction extends ReplaceInFileConfig {
   type: 'modify'
-  files: string[]
 }
 
 export type GeneratorAction =
   | GeneratorCopyAction
-  | GeneratorTransformTemplateAction
   | GeneratorRenameAction
   | GeneratorRemoveAction
   | GeneratorMoveAction
@@ -135,10 +130,6 @@ export type TCopyAction = (
 
 export type TRenameAction = (
   actions: GeneratorRenameAction,
-) => Promise<ActionResult[]>
-
-export type TTransformTemplateAction = (
-  actions: GeneratorTransformTemplateAction,
 ) => Promise<ActionResult[]>
 
 export type TMoveAction = (

@@ -4,6 +4,7 @@ import copyAction from './actionsHandlers/copyAction'
 import renameAction from './actionsHandlers/renameAction'
 import moveAction from './actionsHandlers/moveAction'
 import removeAction from './actionsHandlers/removeAction'
+import modifyAction from './actionsHandlers/modifyAction'
 
 /**
  * Used to run generator actions
@@ -39,25 +40,23 @@ const runActions: TRunActions = async actions => {
       actionsRunResults.push(...actionResult)
     }
 
-    if (action.type === 'transformTemplate') {
-      log.warning(
-        `transformTemplate actions are not yet implemented in multipack-cli`,
-      )
-    }
-
     if (action.type === 'modify') {
-      log.warning(`modify actions are not yet implemented in multipack-cli`)
+      // eslint-disable-next-line no-await-in-loop
+      const actionResult = await modifyAction(action)
+      actionsRunResults.push(...actionResult)
     }
   }
 
   if (actionsRunResults.every(({ error }) => !error)) {
     log.success('All generator actions passed with success')
+  } else if (actionsRunResults.every(({ error }) => error)) {
+    log.error(`All generator actions failed due to these errors:
+      ${actionsRunResults.map(({ error }) => error)}
+    `)
   } else {
-    log.error(
-      `${actionsRunResults.filter(({ error }) => error)}/${
-        actionsRunResults.length
-      } generator actions failed`,
-    )
+    log.warning(`Some generator actions failed due to these errors:
+      ${actionsRunResults.map(({ error }) => error)}
+    `)
   }
 }
 

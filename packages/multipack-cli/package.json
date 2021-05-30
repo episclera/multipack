@@ -54,7 +54,8 @@
     "enquirer": "2.3.6",
     "fs-extra": "10.0.0",
     "opencollective-postinstall": "2.0.3",
-    "ora": "5.4.0"
+    "ora": "5.4.0",
+    "replace-in-file": "6.2.0"
   },
   "gitHead": "8635a43c9abe3ab19ed07077384ebf40fbd7717c"
 }

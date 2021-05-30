@@ -17,8 +17,14 @@ const workspaceGenerator: Generator = {
       required: true,
       message: 'Workspace description (e.g, Enjoyable workspace)',
     },
+    {
+      type: 'input',
+      name: 'organizationName',
+      required: true,
+      message: 'Organization name (e.g, my-organization)',
+    },
   ],
-  actions: ({ workspaceName }) => {
+  actions: ({ workspaceName, workspaceDescription, organizationName }) => {
     const newWorkspaceDir = path.join(process.cwd(), workspaceName)
     return [
       {
@@ -27,6 +33,24 @@ const workspaceGenerator: Generator = {
           [path.join(getTemplatesDirPath(), '/create/workspace/')]:
             newWorkspaceDir,
         },
+      },
+      {
+        type: 'modify',
+        files: [path.join(newWorkspaceDir, '/*')],
+        from: /{{workspaceName}}/g,
+        to: workspaceName as string,
+      },
+      {
+        type: 'modify',
+        files: [path.join(newWorkspaceDir, '/*')],
+        from: /{{workspaceDescription}}/g,
+        to: workspaceDescription as string,
+      },
+      {
+        type: 'modify',
+        files: [path.join(newWorkspaceDir, '/*')],
+        from: /{{organizationName}}/g,
+        to: organizationName as string,
       },
       {
         type: 'rename',
