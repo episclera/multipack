@@ -61,6 +61,10 @@ const workspaceGenerator: Generator = {
             newWorkspaceDir,
             'lerna.json',
           ),
+          [path.join(newWorkspaceDir, '_github')]: path.join(
+            newWorkspaceDir,
+            '.github',
+          ),
         },
       },
       {
