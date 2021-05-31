@@ -1,0 +1,50 @@
+{
+  "name": "<%= workspaceName %>",
+  "description": "<%= workspaceDescription %>",
+  "version": "1.0.0",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": {
+    "name": "<%= organizationName %>",
+    "email": "<%= organizationName %>@<%= organizationName %>.com",
+    "url": "https://<%= organizationName %>.com"
+  },
+  "homepage": "https://<%= organizationName %>.github.io/<%= workspaceName %>/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/<%= organizationName %>/<%= workspaceName %>"
+  },
+  "keywords": ["<%= workspaceName %>"],
+  "bugs": {
+    "url": "https://github.com/<%= organizationName %>/<%= workspaceName %>/issues"
+  },
+  "scripts": {
+    "build:packages": "lerna run build --stream",
+    "watch:packages": "lerna run watch --stream --parallel",
+    "start:packages": "lerna run start --stream --parallel",
+    "link:packages": "lerna bootstrap",
+    "version:packages": "lerna version --conventional-commits --yes --message=\"chore: publish changed packages\"",
+    "publish:packages:npm": "lerna publish from-package --yes --registry=https://registry.npmjs.org",
+    "publish:packages:github": "lerna publish from-package --yes --registry=https://npm.pkg.github.com",
+    "test:packages": "jest --coverage",
+    "watch:test:packages": "jest --watch",
+    "lint:packages": "eslint ./packages --ext .ts,.tsx --max-warnings=0",
+    "fix:packages": "eslint ./packages --ext .ts,.tsx --fix --max-warnings=0",
+    "lint:packages:styles": "stylelint \"./packages/**/*.less\" --syntax=less || exit 0",
+    "fix:packages:styles": "stylelint \"./packages/**/*.less\" --fix --syntax=less",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "latest",
+    "@episclera/multipack": "latest",
+    "@types/jest": "latest",
+    "eslint": "latest",
+    "husky": "latest",
+    "jest": "latest",
+    "lerna": "latest",
+    "lint-staged": "latest",
+    "stylelint": "latest"
+  }
+}

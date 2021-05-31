@@ -10,5 +10,6 @@ describe('isCWDWorkspaceRootFolder', () => {
     spyCWD.mockReturnValue('./unknownPath')
 
     expect(isCWDWorkspaceRootFolder()).toBeFalsy()
+    spyCWD.mockClear()
   })
 })

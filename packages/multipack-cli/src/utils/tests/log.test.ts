@@ -13,5 +13,15 @@ describe('log', () => {
     expect(spy.mock.calls[1][0]).toMatch(`Error: ${message}`)
     expect(spy.mock.calls[2][0]).toMatch(`Warning: ${message}`)
     expect(spy.mock.calls[3][0]).toMatch(`Success: ${message}`)
+    spy.mockClear()
+  })
+
+  it('Should log correct message when message type is Error', () => {
+    const spy = jest.spyOn(console, 'log')
+    const message = 'test message from multipack-cli'
+    log.error(new Error(message))
+
+    expect(spy.mock.calls[0][0]).toMatch(`Error: ${message}`)
+    spy.mockClear()
   })
 })

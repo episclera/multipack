@@ -4,9 +4,9 @@
     src="https://raw.githubusercontent.com/<%= organizationName %>/<%= workspaceName %>/master/logo.png">
   </a>
   <h1>
-      <%= workspaceName %>
+      <%= packageName %>
   </h1>
-  <p> <%= workspaceDescription %> </p>
+  <p> <%= packageDescription %> </p>
   <p>
     <a href="https://<%= organizationName %>.github.io/<%= workspaceName %>/">Site</a>
     | <a href="https://<%= organizationName %>.github.io/<%= workspaceName %>/docs/doc-introduction">Getting Started</a>
@@ -22,7 +22,7 @@
 
 ## Getting started.
 
-Install: `npm i -g @<%= organizationName %>/<%= workspaceName %>`
+Install: `npm i -g @<%= organizationName %>/<%= packageName %>`
 
 ## Usage
 

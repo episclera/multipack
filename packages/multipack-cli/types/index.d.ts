@@ -1,6 +1,7 @@
 import { CommanderError, OutputConfiguration } from 'commander'
 import Enquirer from 'enquirer'
 import ora from 'ora'
+import execa from 'execa'
 import { ReplaceInFileConfig } from 'replace-in-file'
 
 // commands
@@ -18,7 +19,7 @@ export type TGetEndValueFromAny = (rawValue: any, ...fnArgs: any[]) => any
 
 export interface Log {
   info: (message: string) => void
-  error: (message: string) => void
+  error: (message: string | Error) => void
   warning: (message: string) => void
   success: (message: string) => void
 }
@@ -102,6 +103,11 @@ export interface GeneratorTransformAction extends Partial<ReplaceInFileConfig> {
   data: { [key: string]: string }
 }
 
+export interface GeneratorExecAction extends execa.Options {
+  type: 'exec'
+  command: string
+}
+
 export type GeneratorAction =
   | GeneratorCopyAction
   | GeneratorRenameAction
@@ -109,6 +115,7 @@ export type GeneratorAction =
   | GeneratorMoveAction
   | GeneratorModifyAction
   | GeneratorTransformAction
+  | GeneratorExecAction
 
 export interface ActionResult {
   error: boolean | Error
@@ -153,6 +160,10 @@ export type TModifyAction = (
 
 export type TTransformAction = (
   actions: GeneratorTransformAction,
+) => Promise<ActionResult[]>
+
+export type TExecAction = (
+  actions: GeneratorExecAction,
 ) => Promise<ActionResult[]>
 
 // main

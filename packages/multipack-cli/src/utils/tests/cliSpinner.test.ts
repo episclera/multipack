@@ -6,6 +6,7 @@ describe('cliSpinner', () => {
     spin.start()
 
     expect(spin.text).toBe('Loading...')
+    expect(spin.color).toBe('yellow')
 
     await new Promise(resolve => {
       setTimeout(() => {

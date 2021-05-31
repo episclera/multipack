@@ -9,19 +9,22 @@ const workspaceGenerator: Generator = {
       type: 'input',
       name: 'workspaceName',
       required: true,
-      message: 'Workspace name (e.g, my-workspace)',
-    },
-    {
-      type: 'input',
-      name: 'workspaceDescription',
-      required: true,
-      message: 'Workspace description (e.g, Enjoyable workspace)',
+      message: 'Workspace name',
+      initial: 'my-workspace',
     },
     {
       type: 'input',
       name: 'organizationName',
       required: true,
-      message: 'Organization name (e.g, my-organization)',
+      message: 'Organization name',
+      initial: 'my-organization',
+    },
+    {
+      type: 'input',
+      name: 'workspaceDescription',
+      required: true,
+      message: 'Workspace description',
+      initial: 'Enjoyable tool for programmers',
     },
   ],
   actions: answers => {
@@ -46,7 +49,21 @@ const workspaceGenerator: Generator = {
             newWorkspaceDir,
             '.gitignore',
           ),
+          [path.join(newWorkspaceDir, '_package.json')]: path.join(
+            newWorkspaceDir,
+            'package.json',
+          ),
         },
+      },
+      {
+        type: 'exec',
+        command: 'git init',
+        cwd: newWorkspaceDir,
+      },
+      {
+        type: 'exec',
+        command: 'npm i',
+        cwd: newWorkspaceDir,
       },
     ]
   },

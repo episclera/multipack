@@ -6,6 +6,7 @@ import moveAction from './actionsHandlers/moveAction'
 import removeAction from './actionsHandlers/removeAction'
 import modifyAction from './actionsHandlers/modifyAction'
 import transformAction from './actionsHandlers/transformAction'
+import execAction from './actionsHandlers/execAction'
 
 /**
  * Used to run generator actions
@@ -17,53 +18,58 @@ const runActions: TRunActions = async actions => {
 
   // eslint-disable-next-line no-restricted-syntax
   for (const action of actions) {
+    let actionResult
+
     if (action.type === 'copy') {
       // eslint-disable-next-line no-await-in-loop
-      const actionResult = await copyAction(action)
-      actionsRunResults.push(...actionResult)
+      actionResult = await copyAction(action)
     }
 
     if (action.type === 'move') {
       // eslint-disable-next-line no-await-in-loop
-      const actionResult = await moveAction(action)
-      actionsRunResults.push(...actionResult)
+      actionResult = await moveAction(action)
     }
 
     if (action.type === 'rename') {
       // eslint-disable-next-line no-await-in-loop
-      const actionResult = await renameAction(action)
-      actionsRunResults.push(...actionResult)
+      actionResult = await renameAction(action)
     }
 
     if (action.type === 'remove') {
       // eslint-disable-next-line no-await-in-loop
-      const actionResult = await removeAction(action)
-      actionsRunResults.push(...actionResult)
+      actionResult = await removeAction(action)
     }
 
     if (action.type === 'modify') {
       // eslint-disable-next-line no-await-in-loop
-      const actionResult = await modifyAction(action)
-      actionsRunResults.push(...actionResult)
+      actionResult = await modifyAction(action)
     }
 
     if (action.type === 'transform') {
       // eslint-disable-next-line no-await-in-loop
-      const actionResult = await transformAction(action)
-      actionsRunResults.push(...actionResult)
+      actionResult = await transformAction(action)
     }
+
+    if (action.type === 'exec') {
+      // eslint-disable-next-line no-await-in-loop
+      actionResult = await execAction(action)
+    }
+
+    actionsRunResults.push(...(actionResult || []))
   }
 
   if (actionsRunResults.every(({ error }) => !error)) {
     log.success('All generator actions passed with success')
   } else if (actionsRunResults.every(({ error }) => error)) {
-    log.error(`All generator actions failed due to these errors:
-      ${actionsRunResults.map(({ error }) => error)}
-    `)
+    actionsRunResults
+      .filter(({ error }) => error)
+      .forEach(({ error }) => log.error(error as Error))
+    log.error(`All generator actions failed due these errors above!`)
   } else {
-    log.warning(`Some generator actions failed due to these errors:
-      ${actionsRunResults.map(({ error }) => error)}
-    `)
+    actionsRunResults
+      .filter(({ error }) => error)
+      .forEach(({ error }) => log.error(error as Error))
+    log.warning(`Some generator actions failed due these errors above!`)
   }
 }
 
