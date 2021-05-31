@@ -1,7 +1,8 @@
+import path from 'path'
 import { program } from 'commander'
+import { readJSONSync } from 'fs-extra'
 import createCommand from './commands/create'
 import { TInitCli } from '../types'
-import pkg from '../package.json'
 
 /**
  * Used as entry point to initialize multipack Command line interface
@@ -17,6 +18,11 @@ const initCli: TInitCli = (args = process.argv, override) => {
     if (override.configureOutput) {
       program.configureOutput(override.configureOutput)
     }
+  }
+
+  // Note: reading pkg using fs because if importing it then the version will not be dynamic but one from build step but not the one after publish step
+  const pkg = readJSONSync(path.join(__dirname, '../package.json')) as {
+    [key: string]: any
   }
 
   program.version(pkg.version)
