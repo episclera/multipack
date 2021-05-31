@@ -1,0 +1,47 @@
+name: Publish Packages
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  publishPackages:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup git user
+        run: |
+          git config --global user.email "noreply@github.com"
+          git config --global user.name "Github"
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+      - name: Install dependencies and build packages
+        run: |
+          npm ci
+          npm run link:packages
+          npm run build:packages
+      - name: Bump package versions and Create release tags
+        run: |
+          yes | npm run version:packages
+      - name: Prepare .npmrc file to publish packages to NPM registry
+        uses: actions/setup-node@v2
+        with:
+          registry-url: 'https://registry.npmjs.org'
+      - name: Publish to NPM
+        run: |
+          yes | npm run publish:packages:npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Prepare .npmrc file to publish packages to GitHub registry
+        uses: actions/setup-node@v2
+        with:
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@episclera'
+      - name: Publish to GitHub
+        run: |
+          yes | npm run publish:packages:github
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

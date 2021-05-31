@@ -1,0 +1,9 @@
+pull_request_rules:
+  - name: Automatic merge weekly release PR
+    conditions:
+      - label=weekly-release
+      - check-success=prCheck (14.x)
+      - base=master
+    actions:
+      merge:
+        method: rebase

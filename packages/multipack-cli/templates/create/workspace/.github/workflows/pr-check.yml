@@ -1,0 +1,24 @@
+name: PR Check
+
+on: [pull_request]
+
+jobs:
+  prCheck:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+      - name: Install dependencies and build packages
+        run: |
+          npm ci
+          npm run link:packages
+          npm run build:packages
+      - name: Lint and Test
+        run: |
+          npm run lint:packages
+          npm run lint:packages:styles
+          npm run test:packages

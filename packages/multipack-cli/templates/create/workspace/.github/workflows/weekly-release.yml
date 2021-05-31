@@ -1,0 +1,37 @@
+name: Weekly Release Packages
+
+on:
+  schedule:
+    - cron: '0 11 * * 1'
+
+jobs:
+  weeklyRelease:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Reset main branch
+        run: |
+          git fetch origin develop:develop
+          git reset --hard develop
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%d-%m-%Y')"
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v3
+        with:
+          author: GitHub <noreply@github.com>
+          branch: weekly-release/${{ steps.date.outputs.date }}
+          title: Weekly Release Packages
+          body: |
+            Weekly auto-generated PR that will  be auto-merged to trigger the auto-publish process
+          labels: |
+            weekly-release
+          base: master
+          delete-branch: true
+          token: ${{ secrets.PAT }}
+      - name: Check outputs
+        run: |
+          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
+          echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
