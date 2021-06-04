@@ -1,5 +1,0 @@
-/node_modules
-/src
-**/tests
-webpack.config.js
-tsconfig.json

@@ -1,7 +1,6 @@
 import { mergeConfigs } from '@episclera/multipack-utils'
 import jestConfig from '@episclera/jest-config'
 import eslintConfig from '@episclera/eslint-config'
-import { commonBabelConfig, nextBabelConfig } from '@episclera/babel-config'
 import {
   commonWebpackConfig,
   packageWebpackConfig,
@@ -33,9 +32,6 @@ const multipack: Multipack = {
   postcssConfig,
   // tailwind
   tailwindConfig,
-  // babel
-  commonBabelConfig,
-  nextBabelConfig,
   // webpack
   commonWebpackConfig,
   packageWebpackConfig,
@@ -65,9 +61,6 @@ export {
   postcssConfig,
   // tailwind
   tailwindConfig,
-  // babel
-  commonBabelConfig,
-  nextBabelConfig,
   // webpack
   commonWebpackConfig,
   packageWebpackConfig,

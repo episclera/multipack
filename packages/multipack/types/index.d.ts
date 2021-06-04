@@ -3,7 +3,6 @@ import { PrettierConfig } from '@episclera/prettier-config'
 import { StylelintConfig } from '@episclera/stylelint-config'
 import { JestConfig } from '@episclera/jest-config'
 import { EslintConfig } from '@episclera/eslint-config'
-import { BabelConfigPart } from '@episclera/babel-config'
 import { WebpackConfigPart } from '@episclera/webpack-config'
 import { CommitlintConfig } from '@episclera/commitlint-config'
 import { PostcssConfig } from '@episclera/postcss-config'
@@ -28,9 +27,6 @@ export interface Multipack {
   postcssConfig: PostcssConfig
   // tailwind
   tailwindConfig: TailwindConfig
-  // babel
-  commonBabelConfig: BabelConfigPart
-  nextBabelConfig: BabelConfigPart
   // webpack
   commonWebpackConfig: WebpackConfigPart
   packageWebpackConfig: WebpackConfigPart
@@ -60,9 +56,6 @@ export const eslintConfig: EslintConfig
 export const postcssConfig: PostcssConfig
 // tailwind
 export const tailwindConfig: TailwindConfig
-// babel
-export const commonBabelConfig: BabelConfigPart
-export const nextBabelConfig: BabelConfigPart
 // webpack
 export const commonWebpackConfig: WebpackConfigPart
 export const packageWebpackConfig: WebpackConfigPart

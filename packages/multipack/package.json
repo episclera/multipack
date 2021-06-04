@@ -47,7 +47,6 @@
     "webpack-cli": "4.7.0"
   },
   "dependencies": {
-    "@episclera/babel-config": "^1.13.0",
     "@episclera/codegen-config": "^1.4.0",
     "@episclera/commitlint-config": "^1.13.0",
     "@episclera/eslint-config": "^1.13.0",

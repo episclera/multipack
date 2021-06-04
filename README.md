@@ -124,28 +124,6 @@ const { lintStagedConfig } = require('@episclera/multipack')
 module.exports = lintStagedConfig
 ```
 
-#### With Babel
-
-In your `.babelrc.js` file just put this content.
-
-```js
-const { commonBabelConfig } = require('@episclera/multipack')
-// OR install and import just what you need separately: const { commonBabelConfig } = require('@episclera/babel-config')
-
-module.exports = commonBabelConfig
-
-// OR you can mix multiple configs with "mergeConfigs" util
-const {
-  commonBabelConfig,
-  nextBabelConfig,
-  mergeConfigs,
-} = require('@episclera/multipack')
-// OR install and import just what you need separately: const { commonBabelConfig, nextBabelConfig } = require('@episclera/babel-config')
-// const { mergeConfigs } = require('@episclera/multipack-utils')
-
-module.exports = mergeConfigs(commonBabelConfig, nextBabelConfig)
-```
-
 #### With Webpack
 
 In your `webpack.config.js` file just put this content.
