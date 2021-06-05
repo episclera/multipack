@@ -34,15 +34,15 @@
     "publish:packages:github": "lerna publish from-package --yes --registry=https://npm.pkg.github.com",
     "test:packages": "jest --coverage",
     "watch:test:packages": "jest --watch",
-    "lint:packages": "eslint ./packages --ext .ts,.tsx --max-warnings=0",
-    "fix:packages": "eslint ./packages --ext .ts,.tsx --fix --max-warnings=0",
+    "lint:packages:scripts": "eslint ./packages --ext .ts,.tsx --max-warnings=0",
+    "fix:packages:scripts": "eslint ./packages --ext .ts,.tsx --fix --max-warnings=0",
     "lint:packages:styles": "stylelint \"./packages/**/*.less\" --syntax=less || exit 0",
     "fix:packages:styles": "stylelint \"./packages/**/*.less\" --fix --syntax=less",
     "prepare": "husky install"
   },
   "devDependencies": {
     "@commitlint/cli": "12.1.4",
-    "@episclera/multipack": "5.6.0",
+    "@episclera/multipack": "5.12.1",
     "@types/jest": "26.0.23",
     "eslint": "7.28.0",
     "husky": "6.0.0",

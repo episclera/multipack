@@ -19,6 +19,6 @@ jobs:
           npm run build:packages
       - name: Lint and Test
         run: |
-          npm run lint:packages
+          npm run lint:packages:scripts
           npm run lint:packages:styles
           npm run test:packages
