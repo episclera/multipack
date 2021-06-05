@@ -4,7 +4,7 @@ import { GeneratorConfig } from '../../../types'
 import getTemplatesDirPath from '../../utils/getTemplatesDirPath'
 
 /* istanbul ignore next */
-const packageGenerator: GeneratorConfig = {
+const packageGeneratorConfig: GeneratorConfig = {
   prompts: [
     {
       type: 'select',
@@ -95,4 +95,4 @@ const packageGenerator: GeneratorConfig = {
   },
 }
 
-export default packageGenerator
+export default packageGeneratorConfig

@@ -4,7 +4,7 @@ import { TRenameAction, GeneratorActionResult } from '../../../types'
 
 /**
  * Used to run rename actions
- * @param action - represents a rename action from generator config actions array
+ * @param action - represents a rename action from generator config actions
  */
 /* istanbul ignore next */
 const renameAction: TRenameAction = async action => {

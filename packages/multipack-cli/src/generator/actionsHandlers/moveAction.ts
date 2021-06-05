@@ -4,7 +4,7 @@ import { TMoveAction, GeneratorActionResult } from '../../../types'
 
 /**
  * Used to run move actions
- * @param action - represents a move action from generator config actions array
+ * @param action - represents a move action from generator config actions
  */
 /* istanbul ignore next */
 const moveAction: TMoveAction = async action => {

@@ -3,7 +3,7 @@ import { GeneratorConfig } from '../../../types'
 import getTemplatesDirPath from '../../utils/getTemplatesDirPath'
 
 /* istanbul ignore next */
-const workspaceGenerator: GeneratorConfig = {
+const workspaceGeneratorConfig: GeneratorConfig = {
   prompts: [
     {
       type: 'input',
@@ -85,4 +85,4 @@ const workspaceGenerator: GeneratorConfig = {
   },
 }
 
-export default workspaceGenerator
+export default workspaceGeneratorConfig

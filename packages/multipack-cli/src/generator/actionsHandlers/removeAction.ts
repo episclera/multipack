@@ -4,7 +4,7 @@ import { TRemoveAction, GeneratorActionResult } from '../../../types'
 
 /**
  * Used to run remove actions
- * @param action - represents a remove action from generator config actions array
+ * @param action - represents a remove action from generator config actions
  */
 /* istanbul ignore next */
 const removeAction: TRemoveAction = async action => {

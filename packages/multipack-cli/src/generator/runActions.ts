@@ -10,7 +10,7 @@ import execAction from './actionsHandlers/execAction'
 
 /**
  * Used to run generator config actions
- * @param actions - array of actions to run
+ * @param actions - actions to run
  */
 /* istanbul ignore next */
 const runActions: TRunActions = async actions => {
@@ -64,12 +64,12 @@ const runActions: TRunActions = async actions => {
     actionsRunResults
       .filter(({ error }) => error)
       .forEach(({ error }) => log.error(error as Error))
-    log.error(`All generator actions failed due these errors above!`)
+    log.error(`All generator actions failed due to these errors above!`)
   } else {
     actionsRunResults
       .filter(({ error }) => error)
       .forEach(({ error }) => log.error(error as Error))
-    log.warning(`Some generator actions failed due these errors above!`)
+    log.warning(`Some generator actions failed due to these errors above!`)
   }
 }
 

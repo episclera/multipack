@@ -7,7 +7,7 @@ import isCWDWorkspaceRootFolder from '../../utils/isCWDWorkspaceRootFolder'
 import { TCreateCommand, GeneratorConfig } from '../../../types'
 
 /**
- * Commander action used to generate a "workspace" or "package"
+ * Commander action used to generate a multipack "workspace" or "package"
  * @param createType - defines what you want to create "workspace" or "package"
  */
 const createCommand: TCreateCommand = async createType => {

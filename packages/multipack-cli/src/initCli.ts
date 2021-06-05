@@ -2,6 +2,7 @@ import path from 'path'
 import { program } from 'commander'
 import { readJSONSync } from 'fs-extra'
 import createCommand from './commands/create'
+import lintCommand from './commands/lint'
 import { TInitCli } from '../types'
 
 /**
@@ -33,6 +34,13 @@ const initCli: TInitCli = (args = process.argv, override) => {
       'Creates a multipack workspace or a package in an existent multipack workspace',
     )
     .action(createCommand)
+
+  program
+    .command('lint')
+    .description(
+      'Lint a multipack workspace to check if it follows multipack standards',
+    )
+    .action(lintCommand)
 
   program.parse(args)
 }

@@ -150,8 +150,8 @@ export type TRunActions = (actions: GeneratorConfigAction[]) => Promise<void>
 // linter
 export interface LinterConfigBaseRule {
   name: string
-  description?: string
-  files?: string | string[]
+  description: string
+  files: string[]
 }
 
 export interface LinterConfigFilesExistsRule extends LinterConfigBaseRule {
@@ -160,7 +160,7 @@ export interface LinterConfigFilesExistsRule extends LinterConfigBaseRule {
 
 export interface LinterConfigMatchRule extends LinterConfigBaseRule {
   type: 'match'
-  pattern: string | RegExp
+  pattern: RegExp
 }
 
 export type LinterConfigRule =
@@ -177,15 +177,17 @@ export interface LinterConfig {
 // linter rules handlers
 export type TFilesExistsRule = (
   rule: LinterConfigFilesExistsRule,
-) => Promise<LinterRuleResult>
+) => Promise<LinterRuleResult[]>
 
 // linter rules handlers
 export type TMatchRule = (
   rule: LinterConfigMatchRule,
-) => Promise<LinterRuleResult>
+) => Promise<LinterRuleResult[]>
 
 // linter methods
-export type TRunRules = (rules: LinterConfigRule[]) => Promise<void>
+export type TRunRules = (rules: LinterConfig['rules']) => Promise<void>
+
+export type TLinter = (linterConfig: LinterConfig) => Promise<void>
 
 // commands
 export type TCreateCommand = (createType: string) => Promise<void>

@@ -4,7 +4,7 @@ import { TModifyAction, GeneratorActionResult } from '../../../types'
 
 /**
  * Used to run modify actions
- * @param action - represents a modify action from generator config actions array
+ * @param action - represents a modify action from generator config actions
  */
 /* istanbul ignore next */
 const modifyAction: TModifyAction = async ({ type, ...modifyOptions }) => {
