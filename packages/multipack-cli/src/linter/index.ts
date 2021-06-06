@@ -5,7 +5,6 @@ import { TLinter } from '../../types'
  *  Used to run linterConfigs
  * @param linterConfig - linterConfig
  */
-/* istanbul ignore next */
 const linter: TLinter = async linterConfig => {
   const linterConfigRules =
     typeof linterConfig.rules === 'function'

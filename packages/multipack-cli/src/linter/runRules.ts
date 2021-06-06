@@ -7,7 +7,6 @@ import matchRule from './rulesHandlers/matchRule'
  * Used to run linter config rules
  * @param rules - rules to run
  */
-/* istanbul ignore next */
 const runRules: TRunRules = async rules => {
   const rulesRunResults: LinterRuleResult[] = []
 

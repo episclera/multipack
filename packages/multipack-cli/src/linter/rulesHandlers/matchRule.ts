@@ -6,7 +6,6 @@ import { TMatchRule, LinterRuleResult } from '../../../types'
  * Used to run match rules
  * @param rule - represents a match rule from linter config rules
  */
-/* istanbul ignore next */
 const matchRule: TMatchRule = async ({
   type,
   name,

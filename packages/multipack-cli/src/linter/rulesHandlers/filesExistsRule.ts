@@ -6,7 +6,6 @@ import { TFilesExistsRule, LinterRuleResult } from '../../../types'
  * Used to run filesExists rules
  * @param rule - represents a filesExists rule from linter config rules
  */
-/* istanbul ignore next */
 const filesExistsRule: TFilesExistsRule = async ({
   type,
   name,
