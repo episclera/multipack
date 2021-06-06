@@ -34,7 +34,7 @@ const runRules: TRunRules = async rules => {
     const rulesWithErrors = rulesRunResults.filter(({ error }) => error)
 
     rulesWithErrors.forEach(({ error }) => log.error(error as Error))
-    log.warning(
+    log.error(
       `${rulesWithErrors.length} of ${rulesRunResults.length} linter rules failed due to these errors above!`,
     )
   }

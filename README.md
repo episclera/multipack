@@ -20,7 +20,7 @@
 
 ## Features
 
-- Manage, Configure and Create monorepo projects which follows Multipack standarts.
+- Manage, Configure and Create monorepo projects which follows Multipack standards.
 
 ## Getting started.
 
@@ -28,14 +28,14 @@ Install: `npm i -g @episclera/multipack`
 
 ## Usage
 
-#### `multipack create workspace` - Create a new monorepo following Multipack standarts
+#### `multipack create workspace` - Create a new monorepo following Multipack standards
 
 ```sh
 ? Workspace name (e.g., my-worspace)     happyworkspace
 ? Workspace organization name (e.g., org my-organization)     happyorg
 ```
 
-#### `multipack create package` - Create a new package in the current workspace following Multipack standarts
+#### `multipack create package` - Create a new package in the current workspace following Multipack standards
 
 ```sh
 ? What to create in the workspace (Use arrow keys)

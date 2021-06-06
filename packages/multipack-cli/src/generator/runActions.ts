@@ -64,8 +64,8 @@ const runActions: TRunActions = async actions => {
     const actionsWithErrors = actionsRunResults.filter(({ error }) => error)
 
     actionsWithErrors.forEach(({ error }) => log.error(error as Error))
-    log.warning(
-      `${actionsWithErrors.length} of ${actionsRunResults.length} linter actions failed due to these errors above!`,
+    log.error(
+      `${actionsWithErrors.length} of ${actionsRunResults.length} generator actions failed due to these errors above!`,
     )
   }
 }

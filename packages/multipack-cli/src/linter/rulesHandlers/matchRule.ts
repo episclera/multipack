@@ -10,7 +10,7 @@ import { TMatchRule, LinterRuleResult } from '../../../types'
 const matchRule: TMatchRule = async ({
   type,
   name,
-  pattern,
+  patterns,
   files,
   description,
 }) => {
@@ -19,26 +19,31 @@ const matchRule: TMatchRule = async ({
       fileName =>
         new Promise(resolve => {
           const spinner = cliSpinner(
-            `Checking if "${fileName}" content are matching the pattern "${pattern}"`,
+            `Checking if "${fileName}" content are matching the patterns "${patterns}"`,
           ).start()
 
           readFile(fileName, (error, data) => {
             if (error) {
               spinner.fail()
               resolve({ error })
-            } else if (!pattern.test(data.toString())) {
+            } else {
+              const notMatchingPatterns = patterns.filter(
+                pattern => !pattern.test(data.toString()),
+              )
               const ruleDescription =
                 typeof description === 'function'
-                  ? description({ fileName, pattern })
+                  ? description({ fileName, patterns, notMatchingPatterns })
                   : description
 
-              spinner.fail()
-              resolve({
-                error: new Error(`[${type}/${name}] - ${ruleDescription}`),
-              })
-            } else {
-              spinner.succeed()
-              resolve({ error: false })
+              if (notMatchingPatterns.length > 0) {
+                spinner.fail()
+                resolve({
+                  error: new Error(`[${type}/${name}] - ${ruleDescription}`),
+                })
+              } else {
+                spinner.succeed()
+                resolve({ error: false })
+              }
             }
           })
         }),

@@ -1,4 +1,3 @@
-import path from 'path'
 import { LinterConfig } from '../../../types'
 
 /* istanbul ignore next */
@@ -9,16 +8,18 @@ const workspaceLinterConfig: LinterConfig = {
         type: 'files-exists',
         name: 'multipack-structure',
         description: ({ fileName }) =>
-          `"${fileName}" file should be present in a Multipack workspace`,
-        files: [path.join(process.cwd(), './lerna.json')],
+          `"${fileName}" file is required to be present in a Multipack workspace`,
+        files: ['./lerna.json', './package.json'],
       },
       {
         type: 'match',
         name: 'npm-workspace-scripts',
-        description: ({ fileName, pattern }) =>
-          `Multipack requires that the file "${fileName}" to contain "${pattern.source}" script`,
-        pattern: /build:packages/g,
-        files: [path.join(process.cwd(), './package.json')],
+        description: ({ fileName, notMatchingPatterns }) =>
+          `Following npm scripts ${notMatchingPatterns.map(
+            pattern => `\n"${pattern.source}"`,
+          )} \nare required to be present in your ${fileName} file`,
+        patterns: [/build:packages/, /test:packages/],
+        files: ['./package.json'],
       },
     ]
   },

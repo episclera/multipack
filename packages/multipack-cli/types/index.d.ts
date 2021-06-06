@@ -160,10 +160,14 @@ export interface LinterConfigFilesExistsRule extends LinterConfigBaseRule {
 
 export interface LinterConfigMatchRule extends LinterConfigBaseRule {
   type: 'match'
-  pattern: RegExp
+  patterns: RegExp[]
   description:
     | string
-    | ((descriptionContext: { fileName: string; pattern: RegExp }) => string)
+    | ((descriptionContext: {
+        fileName: string
+        patterns: RegExp[]
+        notMatchingPatterns: RegExp[]
+      }) => string)
 }
 
 export type LinterConfigRule =

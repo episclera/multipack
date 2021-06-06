@@ -30,18 +30,13 @@ const packageGeneratorConfig: GeneratorConfig = {
     },
   ],
   actions: answers => {
-    const newPackageDir = path.join(
-      process.cwd(),
-      './packages/',
-      answers.packageName,
-    )
-    const pkg = readJSONSync(path.join(process.cwd(), 'package.json')) as {
+    const newPackageDir = `./packages/${answers.packageName}`
+    const pkg = readJSONSync('./package.json') as {
       name: string
       author: {
         name: string
       }
     }
-
     const transformData = {
       ...answers,
       workspaceName: pkg.name,
@@ -52,7 +47,7 @@ const packageGeneratorConfig: GeneratorConfig = {
       {
         // Note: removing .gitkeep if the workspace is new and /package folder is empty
         type: 'remove',
-        files: [path.join(process.cwd(), './packages/.gitkeep')],
+        files: ['./packages/.gitkeep'],
       },
       {
         type: 'copy',
@@ -66,24 +61,15 @@ const packageGeneratorConfig: GeneratorConfig = {
       },
       {
         type: 'transform',
-        files: path.join(newPackageDir, '/*'),
+        files: `${newPackageDir}/*`,
         data: transformData,
       },
       {
         type: 'rename',
         files: {
-          [path.join(newPackageDir, '_npmignore')]: path.join(
-            newPackageDir,
-            '.npmignore',
-          ),
-          [path.join(newPackageDir, '_package.json')]: path.join(
-            newPackageDir,
-            'package.json',
-          ),
-          [path.join(newPackageDir, '_tsconfig.json')]: path.join(
-            newPackageDir,
-            'tsconfig.json',
-          ),
+          [`${newPackageDir}/_npmignore`]: `${newPackageDir}/.npmignore`,
+          [`${newPackageDir}/_package.json`]: `${newPackageDir}/package.json`,
+          [`${newPackageDir}/_tsconfig.json`]: `${newPackageDir}/tsconfig.json`,
         },
       },
       {

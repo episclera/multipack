@@ -28,7 +28,7 @@ const workspaceGeneratorConfig: GeneratorConfig = {
     },
   ],
   actions: answers => {
-    const newWorkspaceDir = path.join(process.cwd(), answers.workspaceName)
+    const newWorkspaceDir = `./${answers.workspaceName}`
     return [
       {
         type: 'copy',
@@ -39,36 +39,18 @@ const workspaceGeneratorConfig: GeneratorConfig = {
       },
       {
         type: 'transform',
-        files: path.join(newWorkspaceDir, '/*'),
+        files: `${newWorkspaceDir}/*`,
         data: answers,
       },
       {
         type: 'rename',
         files: {
-          [path.join(newWorkspaceDir, './.husky/_gitignore')]: path.join(
-            newWorkspaceDir,
-            './.husky/.gitignore',
-          ),
-          [path.join(newWorkspaceDir, '_gitignore')]: path.join(
-            newWorkspaceDir,
-            '.gitignore',
-          ),
-          [path.join(newWorkspaceDir, '_package.json')]: path.join(
-            newWorkspaceDir,
-            'package.json',
-          ),
-          [path.join(newWorkspaceDir, '_tsconfig.json')]: path.join(
-            newWorkspaceDir,
-            'tsconfig.json',
-          ),
-          [path.join(newWorkspaceDir, '_lerna.json')]: path.join(
-            newWorkspaceDir,
-            'lerna.json',
-          ),
-          [path.join(newWorkspaceDir, '_github')]: path.join(
-            newWorkspaceDir,
-            '.github',
-          ),
+          [`${newWorkspaceDir}/.husky/_gitignore`]: `${newWorkspaceDir}/.husky/.gitignore`,
+          [`${newWorkspaceDir}/_gitignore`]: `${newWorkspaceDir}/.gitignore`,
+          [`${newWorkspaceDir}/_package.json`]: `${newWorkspaceDir}/package.json`,
+          [`${newWorkspaceDir}/_tsconfig.json`]: `${newWorkspaceDir}/tsconfig.json`,
+          [`${newWorkspaceDir}/_lerna.json`]: `${newWorkspaceDir}/lerna.json`,
+          [`${newWorkspaceDir}/_github`]: `${newWorkspaceDir}/.github`,
         },
       },
       {
