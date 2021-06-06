@@ -34,6 +34,7 @@
     "publish:packages:github": "lerna publish from-package --yes --registry=https://npm.pkg.github.com",
     "test:packages": "jest --coverage",
     "watch:test:packages": "jest --watch",
+    "lint:packages:structure": "multipack lint",
     "lint:packages:scripts": "eslint ./packages --ext .ts,.tsx --max-warnings=0",
     "fix:packages:scripts": "eslint ./packages --ext .ts,.tsx --fix --max-warnings=0",
     "lint:packages:styles": "stylelint \"./packages/**/*.less\" --syntax=less || exit 0",
@@ -42,7 +43,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "12.1.4",
-    "@episclera/multipack": "5.12.1",
+    "@episclera/multipack": "5.14.0",
     "@types/jest": "26.0.23",
     "eslint": "7.28.0",
     "husky": "6.0.0",
