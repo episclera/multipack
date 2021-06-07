@@ -46,7 +46,7 @@
     "ts-loader": "9.2.3",
     "typescript": "4.3.2",
     "webpack": "5.38.1",
-    "webpack-cli": "4.7.0"
+    "webpack-cli": "4.7.1"
   },
   "dependencies": {
     "lint-staged": "11.0.0",
