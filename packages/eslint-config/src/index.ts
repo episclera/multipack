@@ -21,9 +21,10 @@ const eslintConfig: EslintConfig = {
     browser: true,
   },
   rules: {
-    'react/jsx-props-no-spreading': 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
-    '@typescript-eslint/restrict-template-expressions': 'off',
+    'react/jsx-props-no-spreading': 'off', // useless because it's not possible to get ...rest props
+    'react/require-default-props': 'off', // useless because default props are deprecated for functional components
+    '@typescript-eslint/no-explicit-any': 'off', // useless because sometime you need any type
+    '@typescript-eslint/restrict-template-expressions': 'off', // useless because template literals can transform anything to string
   },
 }
 
