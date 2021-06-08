@@ -38,7 +38,7 @@ jspm_packages/
 **/node_modules/
 
 # Typescript v1 declaration files
-typings/
+**/typings/
 
 # Optional npm cache directory
 .npm
@@ -70,18 +70,25 @@ yarn-error.log
 **/build/
 
 # Strapi directories
-exports
-.cache
-public/uploads/*
-!public/uploads/.gitkeep
+**/exports
+**/.cache
+**/public/uploads/*
+!**/public/uploads/.gitkeep
+**/.strapi-updater.json
 .tmp
 *.sql
 *.sqlite
 *.sqlite3
 
 # Next directories
-.next
+**/.next
 **/out
 
+# Elastic Beanstalk Files
+**/.elasticbeanstalk/*
+!**/.elasticbeanstalk/*.cfg.yml
+!**/.elasticbeanstalk/*.global.yml
+!**/.elasticbeanstalk/config.yml
+
 # ENV directories
-.env
+**/.env
