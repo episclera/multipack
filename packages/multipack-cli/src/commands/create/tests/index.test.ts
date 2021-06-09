@@ -7,7 +7,6 @@ describe('createCommand', () => {
     await createCommand('test')
 
     expect(spy.mock.calls[0][0]).toMatch('Error')
-    spy.mockClear()
   })
 
   it('Should log an error if createType is package and cwd is not workspace root folder', async () => {
@@ -18,7 +17,5 @@ describe('createCommand', () => {
     await createCommand('package')
 
     expect(spy.mock.calls[0][0]).toMatch('Error')
-    spy.mockClear()
-    spyCWD.mockClear()
   })
 })

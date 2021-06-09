@@ -12,7 +12,6 @@ describe('execAction', () => {
     expect(spy.mock.calls[0][0]).toMatch(
       'Output after running command "exit 0"',
     )
-    spy.mockClear()
   })
 
   it('Should return an error if provided command failed', async () => {

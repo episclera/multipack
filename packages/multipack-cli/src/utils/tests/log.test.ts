@@ -14,7 +14,6 @@ describe('log', () => {
     expect(spy.mock.calls[1][0]).toMatch(new RegExp(`Error:.* ${message}`))
     expect(spy.mock.calls[2][0]).toMatch(new RegExp(`Warning:.* ${message}`))
     expect(spy.mock.calls[3][0]).toMatch(new RegExp(`Success:.* ${message}`))
-    spy.mockClear()
   })
 
   it('Should log correct message when message type is Error and not to duplicate the Error word', () => {
@@ -28,6 +27,5 @@ describe('log', () => {
     expect(spy.mock.calls[0][0]).not.toMatch(
       new RegExp(`Error:.*Error: ${message}`),
     )
-    spy.mockClear()
   })
 })

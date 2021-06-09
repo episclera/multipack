@@ -17,7 +17,6 @@ describe('linter', () => {
     })
 
     expect(spy).toHaveBeenCalledWith(1)
-    spy.mockClear()
   })
 
   it('Should call rules argument as a function to get end rules', async () => {

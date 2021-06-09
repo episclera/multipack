@@ -9,7 +9,5 @@ describe('lintCommand', () => {
     await lintCommand()
 
     expect(spy.mock.calls[0][0]).toMatch('Error')
-    spy.mockClear()
-    spyCWD.mockClear()
   })
 })
