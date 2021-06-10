@@ -24,6 +24,7 @@
     "build:packages": "lerna run build --stream",
     "watch:packages": "lerna run watch --stream --parallel",
     "start:packages": "lerna run start --stream --parallel",
+    "generate:api:types": "lerna run code-gen --stream --parallel",
     "link:packages": "lerna bootstrap",
     "version:packages": "lerna version --conventional-commits --yes --message=\"chore: publish changed packages\"",
     "publish:packages:npm": "lerna publish from-package --yes --registry=https://registry.npmjs.org",
