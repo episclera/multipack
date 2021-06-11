@@ -9,7 +9,7 @@ describe('codeGenConfig', () => {
 
     await writeFile(
       envFilePath,
-      'NEXT_PUBLIC_API_URI = https://api.example.com/graphql',
+      'NEXT_PUBLIC_API_URL = https://api.example.com/graphql',
     )
 
     // Importing it dynamically because .env file also is created dynamically in this test and it can't read it initially

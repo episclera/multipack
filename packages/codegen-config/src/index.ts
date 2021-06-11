@@ -20,10 +20,10 @@ const parsedEnvs = parse(
 
 const codeGenConfig: CodeGenConfig = {
   /**
-   * Resolving schema URI depending on available envs properties for Next and Strapi projects
+   * Resolving schema URL depending on available envs properties for Next and Strapi projects
    */
   schema:
-    parsedEnvs.NEXT_PUBLIC_API_URI ||
+    parsedEnvs.NEXT_PUBLIC_API_URL ||
     `${parsedEnvs.HOST || '0.0.0.0'}:${parsedEnvs.PORT || 3001}/graphql`,
   generates: {
     './api-types.d.ts': {
