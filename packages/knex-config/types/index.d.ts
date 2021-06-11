@@ -7,6 +7,12 @@ export interface KnexConfigDbSettings {
     port: string
     database: string
   }
+  migrations: {
+    directory: string
+  }
+  seeds: {
+    directory: string
+  }
 }
 
 export interface KnexConfig extends KnexConfigDbSettings {
@@ -16,12 +22,8 @@ export interface KnexConfig extends KnexConfigDbSettings {
     connection: {
       filename: string
     }
-  }
-  migrations?: {
-    directory?: string
-  }
-  seeds?: {
-    directory?: string
+    migrations: KnexConfigDbSettings['migrations']
+    seeds: KnexConfigDbSettings['seeds']
   }
 }
 

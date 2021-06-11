@@ -20,6 +20,17 @@ const parsedDevelopmentEnvs = parse(
 const parsedTestEnvs = parse(
   existsSync(testEnvFilePath) ? readFileSync(testEnvFilePath) : '',
 )
+/**
+ * Migrations and seeds paths and conditions are the same for all envs
+ */
+const migrationsAndSeedsOptions = {
+  migrations: {
+    directory: path.join(process.cwd(), './db/migrations'),
+  },
+  seeds: {
+    directory: path.join(process.cwd(), './db/seeds'),
+  },
+}
 
 const knexConfig: KnexConfig = {
   /**
@@ -45,6 +56,7 @@ const knexConfig: KnexConfig = {
       password: get(process, 'env.DATABASE_PASSWORD') as string,
       database: get(process, 'env.DATABASE_NAME') as string,
     },
+    ...migrationsAndSeedsOptions,
   },
   /**
    * Connection for test node_env using sqlite3 connection from .env.test file
@@ -54,13 +66,9 @@ const knexConfig: KnexConfig = {
     connection: {
       filename: parsedTestEnvs.DATABASE_FILENAME,
     },
+    ...migrationsAndSeedsOptions,
   },
-  migrations: {
-    directory: path.join(process.cwd(), './db/migrations'),
-  },
-  seeds: {
-    directory: path.join(process.cwd(), './db/seeds'),
-  },
+  ...migrationsAndSeedsOptions,
 }
 
 export default knexConfig
