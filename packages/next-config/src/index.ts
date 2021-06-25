@@ -13,6 +13,15 @@ const nextConfig: NextConfig = (plugins = [], config = {}) => {
     mergeConfigs(
       {
         i18n,
+        eslint: {
+          /**
+           * By default from next 11 this property is false which try to run eslint before the build
+           * which is wrong giving that builds happens only in master branch but CI in development branches
+           * and this property will consume CI/CD time and resource
+           * Plus in CI eslint has a separate command and we don't want to have twice runs of eslint because that doesn't make sense
+           */
+          ignoreDuringBuilds: true,
+        },
         webpack: (nextWebpackConfig: { [key: string]: any }) => {
           const customWebpackConfig = mergeConfigs(nextWebpackConfig, {
             module: {
