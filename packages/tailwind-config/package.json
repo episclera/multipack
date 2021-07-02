@@ -49,7 +49,7 @@
     "webpack-cli": "4.7.2"
   },
   "dependencies": {
-    "@episclera/weaver-tailwind-config": "1.17.0",
+    "@episclera/weaver-tailwind-config": "1.18.0",
     "opencollective-postinstall": "2.0.3"
   },
   "gitHead": "8635a43c9abe3ab19ed07077384ebf40fbd7717c"
