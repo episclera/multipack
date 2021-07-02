@@ -5,6 +5,9 @@ const stylelintConfig: StylelintConfig = {
   plugins: ['stylelint-prettier'],
   rules: {
     'at-rule-no-unknown': null,
+    /**
+     * Enabling prettier for style files also
+     */
     'prettier/prettier': true,
   },
 }

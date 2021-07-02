@@ -59,6 +59,9 @@ const nextConfig: NextConfig = (plugins = [], config = {}) => {
             },
           })
 
+          /**
+           * Merging user webpack config if is provided with the next.js webpack config
+           */
           if (webpackToMerge) {
             return webpackToMerge(customWebpackConfig)
           }

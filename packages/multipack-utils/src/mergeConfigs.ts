@@ -6,6 +6,9 @@ import { TMergeConfigs } from '../types'
 
 const mergeConfigs: TMergeConfigs = (initialConfig, ...otherConfigs) => {
   const customizer = (prevValue: any, nextValue: any) => {
+    /**
+     * Deep merging only objects otherwise replacing prevValue with the new one without merging something even if the value is Array
+     */
     if (
       !isArray(prevValue) &&
       !isArray(nextValue) &&
