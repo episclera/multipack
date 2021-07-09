@@ -1,6 +1,9 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path')
 
+/**
+ * Unfortunately here I can't use @multipack/webpack-config due to dependencies cycle
+ */
 module.exports = {
   mode: process.env.NODE_ENV,
   target: 'node',
@@ -24,6 +27,6 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.tsx'], // [js and jsx] are added just to resolve correct non TS (files, libraries etc.)
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'], // [js and jsx] are added just to resolve correct non TS (files, libraries etc.)
   },
 }

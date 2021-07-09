@@ -8,7 +8,10 @@ const lintStagedConfig: LintStagedConfig = {
    * in order to have full visibility on any possible commit changes
    */
   '*': ['npm run lint:packages:structure'],
-  '*.(ts|tsx)': ['npm run lint:packages:scripts'],
+  '*.(ts|tsx|d.ts)': [
+    'npm run lint:packages:types',
+    'npm run lint:packages:scripts',
+  ],
   '*.(less)': ['npm run lint:packages:styles'],
 }
 

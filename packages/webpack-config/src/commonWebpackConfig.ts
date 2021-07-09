@@ -23,7 +23,7 @@ const commonWebpackConfig: WebpackConfigPart = {
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.tsx'], // [js and jsx] are added just to resolve correct non TS (files, libraries etc.)
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'], // [js and jsx] are added just to resolve correct non TS (files, libraries etc.)
   },
 }
 
