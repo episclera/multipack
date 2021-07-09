@@ -36,7 +36,7 @@
     "test:packages": "jest --coverage",
     "watch:test:packages": "jest --watch",
     "lint:packages:structure": "multipack lint",
-    "lint:packages:types": "tsc --noEmit --p . || exit 1",
+    "lint:packages:types": "tsc --pretty --noEmit --p . && echo \"Dummy command at the end to prevent files passing to tsc from lint-staged\"",
     "lint:packages:scripts": "eslint ./packages --ext .ts,.tsx --max-warnings=0",
     "fix:packages:scripts": "eslint ./packages --ext .ts,.tsx --fix --max-warnings=0",
     "lint:packages:styles": "stylelint \"./packages/**/*.less\" --syntax=less || exit 0",
