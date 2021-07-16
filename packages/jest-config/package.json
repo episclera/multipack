@@ -44,7 +44,7 @@
     "cross-env": "7.0.3",
     "rimraf": "3.0.2",
     "ts-loader": "9.2.3",
-    "webpack": "5.44.0",
+    "webpack": "5.45.0",
     "webpack-cli": "4.7.2"
   },
   "dependencies": {
