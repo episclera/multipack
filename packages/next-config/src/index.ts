@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import withPlugins from 'next-compose-plugins'
+import get from 'lodash.get'
 import withAntdLess from 'next-plugin-antd-less'
 import { i18n } from '@episclera/next-i18next-config'
 import { mergeConfigs } from '@episclera/multipack-utils'
@@ -12,7 +13,13 @@ const nextConfig: NextConfig = (plugins = [], config = {}) => {
     [[withAntdLess], ...plugins],
     mergeConfigs(
       {
-        i18n,
+        /**
+         * Unfortunately `next export` doesn't support i18n/localized paths
+         * and for this reason if the scope is NEXT_EXPORT then returning here false to skip i18n
+         * Translations will be still loaded but only the default "en" translations
+         * Note: Using lodash.get because webpack for some reason replace process.env properties with values at build time even if wp mode is node
+         */
+        i18n: get(process, 'env.NEXT_EXPORT') ? false : i18n,
         eslint: {
           /**
            * By default from next 11 this property is false which try to run eslint before the build

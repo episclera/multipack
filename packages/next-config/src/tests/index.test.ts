@@ -26,6 +26,17 @@ describe('nextConfig', () => {
     })
   })
 
+  it('Should not include i18n config if NEXT_EXPORT env is set', () => {
+    process.env.NEXT_EXPORT = 'true'
+    expect(nextConfig()('development', {})).toMatchObject({
+      i18n: false,
+    })
+    /**
+     * Back to default value to not affect other tests
+     */
+    process.env.NEXT_EXPORT = undefined
+  })
+
   it('Should correctly merge provided webpack config with its own', () => {
     expect(
       nextConfig([], {
