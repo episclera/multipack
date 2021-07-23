@@ -52,6 +52,10 @@ const knexConfig: KnexConfig = {
             'env.DATABASE_NAME',
             parsedEnvs.DATABASE_NAME,
           ) as string,
+          /**
+           * Needed because some DB providers like Heroku Postgresql doesn't allow non SSL connection
+           */
+          ssl: { rejectUnauthorized: false },
         }
       : {
           /**

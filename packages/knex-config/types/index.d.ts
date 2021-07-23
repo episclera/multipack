@@ -4,6 +4,7 @@ export interface PGConnection {
   password: string
   port: string
   database: string
+  ssl: { rejectUnauthorized: boolean }
 }
 
 export interface SQLiteConnection {
