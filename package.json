@@ -47,7 +47,7 @@
     "@commitlint/cli": "12.1.4",
     "@episclera/multipack": "5.31.1",
     "@types/jest": "26.0.24",
-    "eslint": "7.31.0",
+    "eslint": "7.32.0",
     "husky": "7.0.1",
     "jest": "27.0.6",
     "lerna": "4.0.0",
