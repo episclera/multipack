@@ -3,8 +3,12 @@ import { EslintConfig } from '../types'
 const eslintConfig: EslintConfig = {
   extends: [
     'eslint:recommended', // add eslint recommended rules
+    'airbnb', // add airbnb rules
     'airbnb-typescript', // extends from airbnb and override few airbnb rules to TS rules and sets ("extends": "eslint-config-airbnb" AND "parser": @typescript-eslint/parser AND "plugins": @typescript-eslint AND "import/extensions": ['.js', '.mjs', '.jsx', '.ts', '.tsx', '.d.ts'])
     'airbnb/hooks', // sets rules for react/hooks and sets ("plugins": react-hooks AND "parserOptions.ecmaFeatures.jsx:": true)
+    'plugin:react/recommended', // sets recommended rules for react linter
+    'plugin:import/recommended', // sets recommended rules for import linter
+    'plugin:jsx-a11y/recommended', // sets recommended rules for jsx-a11y linter
     'plugin:prettier/recommended', // add prettier rules and sets ("extends": ["prettier"] AND "plugins": ["prettier"])
     'plugin:@typescript-eslint/recommended', // recommended by @typescript-eslint
     'plugin:@typescript-eslint/recommended-requiring-type-checking', // recommended by @typescript-eslint
