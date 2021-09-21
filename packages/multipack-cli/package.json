@@ -50,7 +50,7 @@
     "webpack-cli": "4.8.0"
   },
   "dependencies": {
-    "@types/fs-extra": "9.0.12",
+    "@types/fs-extra": "9.0.13",
     "@types/lodash.template": "4.5.0",
     "chalk": "4.1.2",
     "commander": "8.2.0",
