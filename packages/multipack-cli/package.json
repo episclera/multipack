@@ -60,7 +60,7 @@
     "lodash.template": "4.5.0",
     "lodash.templatesettings": "4.2.0",
     "opencollective-postinstall": "2.0.3",
-    "ora": "5.4.1",
+    "ora": "6.0.1",
     "replace-in-file": "6.2.0"
   },
   "gitHead": "8635a43c9abe3ab19ed07077384ebf40fbd7717c"
